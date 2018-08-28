@@ -48,7 +48,7 @@ body {
   height: calc(100% - 16%);
   margin: 0;
   padding: 10px;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 #cmdbar {
