@@ -55,6 +55,7 @@ body {
   position: fixed;
   left: 0;
   padding: 10px;
+  bottom: 0%;
   margin: 0;
   width: calc(100% - 20px);
   height: 40px;
