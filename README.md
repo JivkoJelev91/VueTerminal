@@ -1,6 +1,6 @@
 # VueTerminal
 ### How to start the project:
-* 1. Clone the repo
-* 2. cd VueTerminal/
-* 3. npm install
-* 4. npm run serve
+* <b>Clone the repo </b>
+* <b>cd VueTerminal/ </b>
+* <b>npm install </b>
+* <b>npm run serve </b>
