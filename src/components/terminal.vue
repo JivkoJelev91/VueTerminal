@@ -153,7 +153,7 @@ export default {
         this.info.map((text, index) => {
           setTimeout(() => {
             this.arr.push(text);
-          }, index * 1000);
+          }, index * 100);
         });
     },
 
