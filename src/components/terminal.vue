@@ -63,7 +63,6 @@ export default {
       isGameActive: false,
       colorActive: false,
       text: "",
-      msg: "",
       guessInput: "",
       arr: [],
       randomNum: 0
@@ -79,7 +78,6 @@ export default {
     },
 
     onEnter(e) {
-      this.msg = this.text;
       this.checkInput(this.text);
       this.text = "";
       this.randomNum = this.genereteRandomNum();
@@ -118,18 +116,16 @@ export default {
     },
 
     getNewDate() {
-      this.msg = new Date();
-      this.arr.push(this.msg);
+      this.arr.push(new Date());
     },
 
     getTimer() {
-      this.msg = new Date().getHours() + ":" + new Date().getMinutes();
-      this.arr.push(this.msg);
+      let clock = new Date().getHours() + ":" + new Date().getMinutes();
+      this.arr.push(clock);
     },
 
     getInfo() {
-      this.msg = "Commands you can use are: " + this.info.join(", ");
-      this.arr.push(this.msg);
+      this.arr.push("Commands you can use are: " + this.info.join(", "));
     },
 
     clearData() {
@@ -138,8 +134,7 @@ export default {
     },
 
     getUserAgent() {
-      this.msg = navigator.userAgent;
-      this.arr.push(this.msg);
+      this.arr.push(navigator.userAgent);
     },
 
     colorRed() {
@@ -160,8 +155,7 @@ export default {
     },
 
     unknownWords() {
-      this.msg = "Command not found!";
-      this.arr.push(this.msg);
+      this.arr.push("Command not found!");
     },
 
     checkInput(txt) {
