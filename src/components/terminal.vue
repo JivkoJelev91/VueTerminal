@@ -9,17 +9,17 @@
         </div>
     </header>
     <div id="cmd" ref="cli">
-        Commands you can use:
-        <ul type="square">
-            <li v-for="(item, index) in info" :key='index'>
-                {{ item }}
-            </li>
-        </ul>
-        <div>
-            This terminal is fully interactive and also
-            dynamic for some commands.
-        </div><br />
-        <div>
+      Commands you can use:
+      <ul type="square">
+          <li v-for="(item, index) in info" :key='index'>
+              {{ item }}
+          </li>
+      </ul>
+      <div>
+          This terminal is fully interactive and also
+          dynamic for some commands.
+      </div><br />
+      <div>
         <input 
         class="gameInput"
         :class="{ activeGame: isGameActive}"
@@ -28,10 +28,9 @@
         v-model="guessInput" 
         v-on:keyup.enter="gameEnter" />
       </div>
-      
-        <div class="items" v-for="(item, index) in arr" :key='index'>{{item}}</div>
+      <div class="items" v-for="(item, index) in arr" :key='index'>{{item}}</div>
     </div>
-        <div id="cmdbar">
+    <div id="cmdbar">
       <input 
         type="text" 
         id="command" 
