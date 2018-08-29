@@ -11,7 +11,7 @@
     <div id="cmd" ref="cli">
       Commands you can use:
       <ul type="square">
-          <li v-for="(item, index) in info" :key='index'>
+          <li v-for="(item, index) in commands" :key='index'>
               {{ item }}
           </li>
       </ul>
@@ -46,7 +46,7 @@ export default {
   name: "VueTerminal",
   data() {
     return {
-      info: [
+      commands: [
         "Date",
         "Time",
         "Info",
@@ -123,7 +123,7 @@ export default {
     },
 
     getInfo() {
-      this.arr.push("Commands you can use are: " + this.info.join(", "));
+      this.arr.push("Commands you can use are: " + this.commands.join(", "));
     },
 
     clearData() {
@@ -157,16 +157,8 @@ export default {
     },
 
     checkInput(txt) {
-      const check =
-        txt == "Date" ||
-        txt == "Time" ||
-        txt == "Info" ||
-        txt == "Clear" ||
-        txt == "About" ||
-        txt == "ColorRed" ||
-        txt == "UserAgent" ||
-        txt == "ColorGreen" ||
-        txt == "GuessGame";
+      const check = txt == "Date" || txt == "Time" || txt == "Info" || txt == "Clear" || txt == "About" || 
+                    txt == "ColorRed" || txt == "UserAgent" || txt == "ColorGreen" || txt == "GuessGame";
 
       if (check) {
         return {
