@@ -4,3 +4,6 @@
 * <b>cd VueTerminal/ </b>
 * <b>npm install </b>
 * <b>npm run serve </b>
+
+![Optional Text](./src/assets/terminal.png)
+
