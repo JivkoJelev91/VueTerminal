@@ -21,7 +21,7 @@
       </div><br />
       <div>
         <input 
-        class="gameInput"
+        id="gameInput"
         :class="{ activeGame: isGameActive}"
         type="number" 
         placeholder="Enter your number..." 
@@ -200,7 +200,7 @@ export default {
   height: 100vh;
 }
 
-.gameInput {
+#gameInput {
   display: none;
 }
 
