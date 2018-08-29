@@ -57,6 +57,12 @@ export default {
         "Clear",
         "About"
       ],
+      info:[
+                  "Created by Jivko Jelev & Svetozar Iliev",
+                  "Created on 28 Aug 2018",
+                  "Technology: HTML, CSS, JS",
+                  "Frameworks: Vue.js"
+      ],
       isActive: false,
       isGameActive: false,
       colorActive: false,
@@ -144,12 +150,11 @@ export default {
     },
 
     about() {
-      this.arr.push(
-        "Created by Jivko Jelev & Svetozar Iliev",
-        "Created on 28 Aug 2018",
-        "Technology: HTML, CSS, JS",
-        "Frameworks: Vue.js"
-      );
+        this.info.map((text, index) => {
+          setTimeout(() => {
+            this.arr.push(text);
+          }, index * 1000);
+        });
     },
 
     unknownWords() {
