@@ -2,7 +2,7 @@
   <div id="wrapper" 
     :class="{ active: isActive, textColor: colorActive }" >
     <header>
-        <h1 class="title">{{title}}</h1>
+        <h1 class="title">Terminal</h1>
         <div class="buttons">
             <button @click="darkTheme()" v-show="isActive">Dark theme</button>
             <button @click="lightTheme()" v-show="!isActive">Light theme</button>
@@ -57,7 +57,6 @@ export default {
         "Clear",
         "About"
       ],
-      title: "Terminal",
       isActive: false,
       isGameActive: false,
       colorActive: false,
