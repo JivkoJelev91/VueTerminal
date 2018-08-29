@@ -57,11 +57,11 @@ export default {
         "Clear",
         "About"
       ],
-      info:[
-                  "Created by Jivko Jelev & Svetozar Iliev",
-                  "Created on 28 Aug 2018",
-                  "Technology: HTML, CSS, JS",
-                  "Frameworks: Vue.js"
+      info: [
+        "Created by Jivko Jelev & Svetozar Iliev",
+        "Created on 28 Aug 2018",
+        "Technology: HTML, CSS, JS",
+        "Frameworks: Vue.js"
       ],
       isActive: false,
       isGameActive: false,
@@ -88,7 +88,7 @@ export default {
       e.preventDefault();
     },
 
-    genereteRandomNum(){
+    genereteRandomNum() {
       return Math.floor(Math.random() * 100) + 1;
     },
 
@@ -150,11 +150,11 @@ export default {
     },
 
     about() {
-        this.info.map((text, index) => {
-          setTimeout(() => {
-            this.arr.push(text);
-          }, index * 100);
-        });
+      this.info.map((text, index) => {
+        setTimeout(() => {
+          this.arr.push(text);
+        }, index * 100);
+      });
     },
 
     unknownWords() {
@@ -162,8 +162,16 @@ export default {
     },
 
     checkInput(txt) {
-      const check = txt == "Date" || txt == "Time" || txt == "Info" || txt == "Clear" || txt == "About" || 
-                    txt == "ColorRed" || txt == "UserAgent" || txt == "ColorGreen" || txt == "GuessGame";
+      const check =
+        txt == "Date" ||
+        txt == "Time" ||
+        txt == "Info" ||
+        txt == "Clear" ||
+        txt == "About" ||
+        txt == "ColorRed" ||
+        txt == "UserAgent" ||
+        txt == "ColorGreen" ||
+        txt == "GuessGame";
 
       if (check) {
         return {
