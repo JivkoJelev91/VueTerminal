@@ -112,7 +112,6 @@ export default {
     onEnter(e) {
       this.checkInput(this.text);
       this.text = "";
-      this.randomNum = this.genereteRandomNum();
       e.preventDefault();
     },
 
@@ -140,6 +139,7 @@ export default {
 
     guessNumber() {
       this.isGameActive = true;
+      this.randomNum = this.genereteRandomNum();
       this.arr = [];
       this.arr.push("Guess a computer chosen number from 1-100");
     },
