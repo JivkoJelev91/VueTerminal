@@ -63,6 +63,13 @@ export default {
         "Technology: HTML, CSS, JS",
         "Frameworks: Vue.js"
       ],
+      correctNumData: [
+        "Correct number!",
+        "---------------",
+        "Want to play Again?",
+        "Type GuessGame",
+        'Or type Clear'
+      ],
       isActive: false,
       isGameActive: false,
       colorActive: false,
@@ -106,10 +113,7 @@ export default {
       } else {
         this.arr = [];
         this.isGameActive = false;
-        this.arr.push("Correct number!");
-        this.arr.push("---------------");
-        this.arr.push("Want to play Again?");
-        this.arr.push("Type GuessGame");
+        this.fadeIn(this.correctNumData);
       }
     },
 
@@ -150,7 +154,11 @@ export default {
     },
 
     about() {
-      this.info.map((text, index) => {
+      this.fadeIn(this.info);
+    },
+
+    fadeIn(array) {
+      array.map((text, index) => {
         setTimeout(() => {
           this.arr.push(text);
         }, index * 500);
@@ -162,7 +170,7 @@ export default {
     },
 
     checkInput(txt) {
-      if(!this.commands.includes(txt)){
+      if (!this.commands.includes(txt)) {
         return this.unknownWords();
       }
       return {
@@ -177,7 +185,6 @@ export default {
         GuessGame: () => this.guessNumber()
       }[txt]();
     }
-
   },
   updated() {
     var elem = this.$refs.cli;
