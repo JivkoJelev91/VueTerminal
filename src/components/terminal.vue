@@ -54,8 +54,8 @@ export default {
         "ColorRed",
         "ColorGreen",
         "GuessGame",
-        "Clear",
-        "About"
+        "About",
+        "Clear"
       ],
       info: [
         "------------------------",
@@ -63,11 +63,11 @@ export default {
         'Data: Shows current date',
         'Time: Shows current time',
         'UserAgent: Shows current browser',
-        'ColorRed: Changes the color signs in to red',
-        'ColorGreen: Changes the color signs in to green',
+        'ColorRed: Changes the color of the text to red',
+        'ColorGreen: Changes the color  of the text to green',
         'GuessGame: Starts a simple game',
-        'Clear: Clears all signs on the screen',
-        'About: Gives information about the creators of the app'
+        'About: Gives information about the creators of the app',
+        'Clear:  Clears the console'
       ],
       aboutArr: [
         "------------------------",
