@@ -19,6 +19,9 @@
           This terminal is fully interactive and also
           dynamic for some commands.
       </div><br />
+       <div class="equals">
+        =====================================================================
+      </div>
       <div>
         <input 
         id="gameInput"
@@ -59,15 +62,15 @@ export default {
       ],
       info: [
         "------------------------",
-        'Commands you can use are:',
-        'Data: Shows current date',
-        'Time: Shows current time',
-        'UserAgent: Shows current browser',
-        'ColorRed: Changes the color of the text to red',
-        'ColorGreen: Changes the color  of the text to green',
-        'GuessGame: Starts a simple game',
-        'About: Gives information about the creators of the app',
-        'Clear:  Clears the console'
+        "Commands you can use are:",
+        "Data: Shows current date",
+        "Time: Shows current time",
+        "UserAgent: Shows current browser",
+        "ColorRed: Changes the color of the text to red",
+        "ColorGreen: Changes the color  of the text to green",
+        "GuessGame: Starts a simple game",
+        "About: Gives information about the creators of the app",
+        "Clear:  Clears the console"
       ],
       aboutArr: [
         "------------------------",
@@ -81,7 +84,7 @@ export default {
         "---------------",
         "Want to play Again?",
         "Type GuessGame",
-        'Or type Clear'
+        "Or type Clear"
       ],
       isActive: false,
       isGameActive: false,
@@ -141,12 +144,17 @@ export default {
     },
 
     getTimer() {
-      let clock = new Date().getHours() + ":" + new Date().getMinutes();
+      let clock =
+        new Date().getHours() +
+        ":" +
+        new Date().getMinutes() +
+        ":" +
+        new Date().getSeconds();
       this.arr.push(clock);
     },
 
     getInfo() {
-      this.fadeIn(this.info)
+      this.fadeIn(this.info);
     },
 
     clearData() {
@@ -233,5 +241,9 @@ export default {
 
 .items {
   margin: 10px 0;
+}
+
+.equals{
+      word-break: break-all;
 }
 </style>

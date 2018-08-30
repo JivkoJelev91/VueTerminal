@@ -49,6 +49,7 @@ body {
   margin: 0;
   padding: 10px;
   overflow: auto;
+  font-size:23px;
 }
 
 #cmdbar {
