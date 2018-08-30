@@ -58,6 +58,17 @@ export default {
         "About"
       ],
       info: [
+        'Commands you can use are:',
+        'Data: Shows current date',
+        'Time: Shows current time',
+        'UserAgent: Shows current browser',
+        'ColorRed: Changes the color signs in to red',
+        'ColorGreen: Changes the color signs in to green',
+        'GuessGame: Starts a simple game',
+        'Clear: Clears all signs on the screen',
+        'About: Gives information about the creators of the app'
+      ],
+      aboutArr: [
         "Created by Jivko Jelev & Svetozar Iliev",
         "Created on 28 Aug 2018",
         "Technology: HTML, CSS, JS",
@@ -133,7 +144,7 @@ export default {
     },
 
     getInfo() {
-      this.arr.push("Commands you can use are: " + this.commands.join(", "));
+      this.fadeIn(this.info)
     },
 
     clearData() {
@@ -154,7 +165,7 @@ export default {
     },
 
     about() {
-      this.fadeIn(this.info);
+      this.fadeIn(this.aboutArr);
     },
 
     fadeIn(array) {
