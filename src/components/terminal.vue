@@ -149,13 +149,16 @@ export default {
     },
 
     getTimer() {
-      let clock =
-        new Date().getHours() +
-        ":" +
-        new Date().getMinutes() +
-        ":" +
-        new Date().getSeconds();
+      let date = new Date();
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+      let clock = this.appendZero(hours) + ":" + this.appendZero(minutes) + ":" + this.appendZero(seconds);
       this.arr.push(clock);
+    },
+
+    appendZero(time){
+      return time < 10 ? "0" + time : time;
     },
 
     getInfo() {
