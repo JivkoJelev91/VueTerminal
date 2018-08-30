@@ -58,6 +58,7 @@ export default {
         "About"
       ],
       info: [
+        "------------------------",
         'Commands you can use are:',
         'Data: Shows current date',
         'Time: Shows current time',
@@ -69,6 +70,7 @@ export default {
         'About: Gives information about the creators of the app'
       ],
       aboutArr: [
+        "------------------------",
         "Created by Jivko Jelev & Svetozar Iliev",
         "Created on 28 Aug 2018",
         "Technology: HTML, CSS, JS",
