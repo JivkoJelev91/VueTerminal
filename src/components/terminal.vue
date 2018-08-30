@@ -162,33 +162,22 @@ export default {
     },
 
     checkInput(txt) {
-      const check =
-        txt == "Date" ||
-        txt == "Time" ||
-        txt == "Info" ||
-        txt == "Clear" ||
-        txt == "About" ||
-        txt == "ColorRed" ||
-        txt == "UserAgent" ||
-        txt == "ColorGreen" ||
-        txt == "GuessGame";
-
-      if (check) {
-        return {
-          Date: () => this.getNewDate(),
-          Time: () => this.getTimer(),
-          Info: () => this.getInfo(),
-          Clear: () => this.clearData(),
-          UserAgent: () => this.getUserAgent(),
-          ColorRed: () => this.colorRed(),
-          ColorGreen: () => this.colorGreen(),
-          About: () => this.about(),
-          GuessGame: () => this.guessNumber()
-        }[txt]();
+      if(!this.commands.includes(txt)){
+        return this.unknownWords();
       }
-
-      return this.unknownWords();
+      return {
+        Date: () => this.getNewDate(),
+        Time: () => this.getTimer(),
+        Info: () => this.getInfo(),
+        Clear: () => this.clearData(),
+        UserAgent: () => this.getUserAgent(),
+        ColorRed: () => this.colorRed(),
+        ColorGreen: () => this.colorGreen(),
+        About: () => this.about(),
+        GuessGame: () => this.guessNumber()
+      }[txt]();
     }
+
   },
   updated() {
     var elem = this.$refs.cli;
