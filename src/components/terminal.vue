@@ -4,7 +4,7 @@
     <header>
         <h1 class="title">Terminal</h1>
         <div class="buttons">
-            <button @click="darkTheme()" v-show="isActive">Dark theme</button>
+            <button @click="lightTheme()" v-show="isActive">Dark theme</button>
             <button @click="lightTheme()" v-show="!isActive">Light theme</button>
         </div>
     </header>
@@ -101,12 +101,9 @@ export default {
     };
   },
   methods: {
-    darkTheme() {
-      this.isActive = false;
-    },
-
+ 
     lightTheme() {
-      this.isActive = true;
+      this.isActive = !this.isActive;
     },
 
     onEnter(e) {
