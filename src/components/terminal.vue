@@ -151,24 +151,17 @@ export default {
       let hours = date.getHours();
       let minutes = date.getMinutes();
       let seconds = date.getSeconds();
-      let clock = this.appendZero(hours) + ":" + this.appendZero(minutes) + ":" + this.appendZero(seconds);
+      let clock =
+        this.appendZero(hours) +
+        ":" +
+        this.appendZero(minutes) +
+        ":" +
+        this.appendZero(seconds);
       this.arr.push(clock);
     },
 
     appendZero(time) {
       return time < 10 ? "0" + time : time;
-    },
-
-    getInfo() {
-      if (this.isComplete || this.counter == 0) {
-         this.fadeIn(this.info, this.info.length);
-      }
-    },
-
-    about() {
-      if (this.isComplete || this.counter == 0) {
-        this.fadeIn(this.aboutArr, this.aboutArr.length);
-      }
     },
 
     clearData() {
@@ -188,9 +181,20 @@ export default {
       this.colorActive = false;
     },
 
+    getInfo() {
+      if (this.isComplete || this.counter == 0) {
+        this.fadeIn(this.info, this.info.length);
+      }
+    },
+
+    about() {
+      if (this.isComplete || this.counter == 0) {
+        this.fadeIn(this.aboutArr, this.aboutArr.length);
+      }
+    },
+
     fadeIn(array, arrayLen) {
       let len = arrayLen * 500;
-      let self = this;
       this.counter++;
       this.isComplete = false;
 
@@ -200,12 +204,16 @@ export default {
         }, index * 500);
       });
 
-      new Promise(function(resolve, reject) {
+      this.usePromise(len);
+    },
+
+    usePromise(len) {
+      new Promise((resolve, reject) =>{
         setTimeout(() => {
-          resolve(self.isComplete);
+          resolve(this.isComplete);
         }, len);
-      }).then(function(result) {
-        self.isComplete = !result;
+      }).then((result) => {
+        this.isComplete = !result;
       });
     },
 
