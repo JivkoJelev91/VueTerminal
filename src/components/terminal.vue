@@ -143,7 +143,9 @@ export default {
     },
 
     getNewDate() {
-      this.arr.push(new Date());
+      if(this.isComplete){
+        this.arr.push(new Date());
+      }
     },
 
     getTimer() {
@@ -157,7 +159,9 @@ export default {
         this.appendZero(minutes) +
         ":" +
         this.appendZero(seconds);
-      this.arr.push(clock);
+        if(this.isComplete){
+          this.arr.push(clock);
+        }
     },
 
     appendZero(time) {
@@ -170,7 +174,9 @@ export default {
     },
 
     getUserAgent() {
-      this.arr.push(navigator.userAgent);
+      if (this.isComplete){
+        this.arr.push(navigator.userAgent);
+      }
     },
 
     colorRed() {
@@ -203,7 +209,6 @@ export default {
           this.arr.push(text);
         }, index * 500);
       });
-
       this.usePromise(len);
     },
 
