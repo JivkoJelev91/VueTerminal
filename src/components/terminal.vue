@@ -73,11 +73,11 @@ export default {
         "Clear:  Clears the console"
       ],
       aboutArr: [
-        '#....#...#####...#....#...##....#...#######...#....#',
-        '#....#...#...#...#....#...#.#...#......#......#....#',
-        '#....#...#####...#....#...#..#..#......#......#....#',
-        '#....#...#...#...#....#...#...#.#......#......#....#',
-        '######...#####...######...#....##......#......######',
+        "#....#...#####...#....#...##....#...#######...#....#",
+        "#....#...#...#...#....#...#.#...#......#......#....#",
+        "#....#...#####...#....#...#..#..#......#......#....#",
+        "#....#...#...#...#....#...#...#.#......#......#....#",
+        "######...#####...######...#....##......#......######",
         "------------------------",
         "Created by Jivko Jelev & Svetozar Iliev",
         "Created on 28 Aug 2018",
@@ -94,14 +94,15 @@ export default {
       isActive: false,
       isGameActive: false,
       colorActive: false,
+      isComplete: false,
       text: "",
       guessInput: "",
       arr: [],
-      randomNum: 0
+      randomNum: 0,
+      counter: 0
     };
   },
   methods: {
- 
     lightTheme() {
       this.isActive = !this.isActive;
     },
@@ -154,12 +155,20 @@ export default {
       this.arr.push(clock);
     },
 
-    appendZero(time){
+    appendZero(time) {
       return time < 10 ? "0" + time : time;
     },
 
     getInfo() {
-      this.fadeIn(this.info);
+      if (this.isComplete || this.counter == 0) {
+         this.fadeIn(this.info, this.info.length);
+      }
+    },
+
+    about() {
+      if (this.isComplete || this.counter == 0) {
+        this.fadeIn(this.aboutArr, this.aboutArr.length);
+      }
     },
 
     clearData() {
@@ -179,15 +188,24 @@ export default {
       this.colorActive = false;
     },
 
-    about() {
-      this.fadeIn(this.aboutArr);
-    },
+    fadeIn(array, arrayLen) {
+      let len = arrayLen * 500;
+      let self = this;
+      this.counter++;
+      this.isComplete = false;
 
-    fadeIn(array) {
       array.map((text, index) => {
         setTimeout(() => {
           this.arr.push(text);
         }, index * 500);
+      });
+
+      new Promise(function(resolve, reject) {
+        setTimeout(() => {
+          resolve(self.isComplete);
+        }, len);
+      }).then(function(result) {
+        self.isComplete = !result;
       });
     },
 
@@ -248,7 +266,7 @@ export default {
   margin: 10px 0;
 }
 
-.equals{
-      word-break: break-all;
+.equals {
+  word-break: break-all;
 }
 </style>
