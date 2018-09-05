@@ -153,9 +153,7 @@ export default {
         this.appendZero(minutes) +
         ":" +
         this.appendZero(seconds);
-      if (this.isComplete) {
         this.arr.push(clock);
-      }
     },
 
     appendZero(time) {
