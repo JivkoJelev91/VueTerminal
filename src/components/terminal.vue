@@ -142,12 +142,6 @@ export default {
       this.arr.push("Guess a computer chosen number from 1-100");
     },
 
-    getNewDate() {
-      if(this.isComplete){
-        this.arr.push(new Date());
-      }
-    },
-
     getTimer() {
       let date = new Date();
       let hours = date.getHours();
@@ -159,9 +153,9 @@ export default {
         this.appendZero(minutes) +
         ":" +
         this.appendZero(seconds);
-        if(this.isComplete){
-          this.arr.push(clock);
-        }
+      if (this.isComplete) {
+        this.arr.push(clock);
+      }
     },
 
     appendZero(time) {
@@ -173,18 +167,20 @@ export default {
       this.isGameActive = false;
     },
 
-    getUserAgent() {
-      if (this.isComplete){
-        this.arr.push(navigator.userAgent);
-      }
-    },
-
     colorRed() {
       this.colorActive = true;
     },
 
     colorGreen() {
       this.colorActive = false;
+    },
+
+    getNewDate() {
+        this.arr.push(new Date());
+    },
+
+    getUserAgent() {
+        this.arr.push(navigator.userAgent);
     },
 
     getInfo() {
@@ -213,11 +209,11 @@ export default {
     },
 
     usePromise(len) {
-      new Promise((resolve, reject) =>{
+      new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(this.isComplete);
         }, len);
-      }).then((result) => {
+      }).then(result => {
         this.isComplete = !result;
       });
     },
