@@ -153,7 +153,7 @@ export default {
         this.appendZero(minutes) +
         ":" +
         this.appendZero(seconds);
-        this.arr.push(clock);
+      this.arr.push(clock);
     },
 
     appendZero(time) {
@@ -174,11 +174,11 @@ export default {
     },
 
     getNewDate() {
-        this.arr.push(new Date());
+      this.arr.push(new Date());
     },
 
     getUserAgent() {
-        this.arr.push(navigator.userAgent);
+      this.arr.push(navigator.userAgent);
     },
 
     getInfo() {
@@ -238,8 +238,8 @@ export default {
     }
   },
   updated() {
-    var elem = this.$refs.cli;
-    elem.scrollTop = elem.clientHeight;
+    let elem = this.$refs.cli;
+    elem.scrollTop = elem.scrollHeight - elem.clientHeight;
   }
 };
 </script>
