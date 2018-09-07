@@ -56,6 +56,7 @@ export default {
         "UserAgent",
         "ColorRed",
         "ColorGreen",
+        "ToggleTheme",
         "GuessGame",
         "About",
         "Clear"
@@ -224,6 +225,9 @@ export default {
       if (!this.commands.includes(txt)) {
         return this.unknownWords();
       }
+
+      console.log(txt);
+
       return {
         Date: () => this.getNewDate(),
         Time: () => this.getTimer(),
@@ -232,6 +236,7 @@ export default {
         UserAgent: () => this.getUserAgent(),
         ColorRed: () => this.colorRed(),
         ColorGreen: () => this.colorGreen(),
+        ToggleTheme: () => this.lightTheme(),
         About: () => this.about(),
         GuessGame: () => this.guessNumber()
       }[txt]();
