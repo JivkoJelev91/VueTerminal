@@ -225,9 +225,6 @@ export default {
       if (!this.commands.includes(txt)) {
         return this.unknownWords();
       }
-
-      console.log(txt);
-
       return {
         Date: () => this.getNewDate(),
         Time: () => this.getTimer(),
