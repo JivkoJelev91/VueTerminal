@@ -29,7 +29,7 @@
         type="number" 
         placeholder="Enter your number..." 
         v-model="guessInput" 
-        v-on:keyup.enter="gameEnter" />
+        @keyup.enter.prevent="gameEnter" />
       </div>
       <div class="items" v-for="(item, index) in arr" :key='index'>{{item}}</div>
     </div>
@@ -39,7 +39,7 @@
         id="command" 
         placeholder="Enter command here..." 
         v-model="text" 
-        v-on:keyup.enter="onEnter" />
+        @keyup.enter.prevent="onEnter" />
     </div>
   </div>
 </template>
@@ -111,7 +111,6 @@ export default {
     onEnter(e) {
       this.checkInput(this.text);
       this.text = "";
-      e.preventDefault();
     },
 
     genereteRandomNum() {
@@ -121,7 +120,6 @@ export default {
     gameEnter(e) {
       this.guessGame();
       this.guessInput = "";
-      e.preventDefault();
     },
 
     guessGame() {
