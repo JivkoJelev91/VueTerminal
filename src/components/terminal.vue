@@ -212,6 +212,7 @@ export default {
         }, len);
       }).then(result => {
         this.isComplete = !result;
+        this.counter = 0;
       });
     },
 
